@@ -9,5 +9,32 @@ pedir datos por prompt y mostrar por document.write o console.log
 */
 function mostrar()
 {
-	alert("uno");
+let nombre;
+let edad=0;
+let sexo;
+let peso;
+let cantidadf=0;
+let banderaNombre;
+let banderapeso=0;
+
+for (let i = 1; i <= 5; i++) {
+    nombre = prompt("Ingresar nombre: ");
+	peso = parseFloat(prompt("Ingresar peso: "));
+	edad = parseInt(prompt("Ingresar tu edad"));
+    sexo = prompt("Ingresar tu sexo: F/M").toLowerCase();
+    while (!(sexo == "f" || sexo == "m")) {
+        sexo = prompt("Error al ingresar el sexo").toLowerCase();
+    }
+    if(sexo=="f"){
+        cantidadf++;
+	}
+	console.log("Cantidad mujeres " + cantidadf);
+	console.log("Edad promedio "+ (edad/5));
+	if(banderapeso == 0 || sexo == "m" && peso>banderapeso){
+        banderaNombre=nombre;
+		banderapeso=peso;
+	}
+	console.log("El hombre mas pesado pesa "+banderapeso);
+
+}
 }
